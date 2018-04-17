@@ -4,7 +4,15 @@
     <meta charset="UTF-8">
     <title>event</title>
     <style>
+        .toggle-title {
+            padding: 10px;
+            background-color: #90CAF9;
+            cursor: pointer;
+        }
 
+        .toggle-title.hover {
+            background-color: #FFCC80;
+        }
     </style>
 </head>
 <body>
@@ -12,12 +20,20 @@
     <p>Javascript 파일은 분리 하지 않음</p>
 
     <h2>문제 1</h2>
-    <p>버튼에 따라 색변경</p>
+    <p>타이틀에 마우스를 올려 배경색 바꾸기</p>
 
     <h3 class="toggle-title">마우스를 올려주세요</h3>
 
+    <script src="../js/helper.js"></script>
     <script>
+        var title = el('.toggle-title');
 
+        title.addEventListener('mouseover', function() {
+            title.classList.add('hover');
+        }, false);
+        title.addEventListener('mouseout', function() {
+            title.classList.remove('hover');
+        }, false);
     </script>
 </body>
 </html>
