@@ -14,11 +14,19 @@
     <h2>문제 1</h2>
     <p>prompt문으로 숫자 2개 입력받아 더한 결과 출력</p>
 
-    <h3 class="toggle-title">마우스를 올려주세요</h3>
-
     <script src="../js/helper.js"></script>
     <script>
-        prompt();
+        var count = 1;
+        var arr = [];
+
+        while(count < 3) {
+            var showTxt = count <= 1 ? '첫' : '두';
+            arr.push(prompt(`${showTxt}번째 숫자 입력`));
+            count += 1;
+        }
+
+        document.write(arr[0] + '+' + arr[1] + '=' + (Number(arr[0]) + Number(arr[1])));
+
     </script>
 </body>
 </html>
