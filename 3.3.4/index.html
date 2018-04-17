@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+	<meta charset="UTF-8">
+	<title>dom</title>
+	<style>
+	.wrap {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 500px;
+		height: 500px;
+		box-shadow: 0 0 0 1px #000;
+	}
+
+	.box {
+		width: 250px;
+		height: 250px;
+		box-shadow: 0 0 0 1px #FFCC80;
+	}
+
+	.box.red {
+		background-color: #EF5350;
+	}
+
+	.box.blue {
+		background-color: #42A5F5;
+	}
+
+	button {
+		width: 150px;
+		height: 30px;
+		border: 0;
+		color: #eee;
+		cursor: pointer;
+	}
+
+	button:hover {
+		color: #424242;
+	}
+
+	[data-color="red"] {
+		background-color: #EF9A9A;
+	}
+
+	[data-color="red"]:hover {
+		background-color: #EF5350;
+	}
+
+	[data-color="blue"] {
+		background-color: #90CAF9;
+	}
+
+	[data-color="blue"]:hover {
+		background-color: #42A5F5;
+	}
+	</style>
+</head>
+<body>
+	<h1>연습문제 3.3.4</h1>
+	<p>Javascript 파일은 분리 하지 않음</p>
+
+	<h2>문제 1</h2>
+	<p>버튼에 따라 색변경</p>
+
+
+	<div class="wrap">
+		<figure class="box"></figure>
+		<div>
+			<button type="button" data-color="red">red</button>
+			<button type="button" data-color="blue">blue</button>
+		</div>
+	</div>
+
+	<script>
+		// helper
+		(function(global) {
+
+			var el = function(selector, context) {
+				context = context ? context : document;
+				return context.querySelector(selector);
+			};
+
+			var els = function(selector, context) {
+				context = context ? context : document;
+				return context.querySelectorAll(selector);
+			};
+
+			global.el = el;
+			global.els = els;
+
+		}(window));
+
+
+		(function() {
+			var oldColor;
+			var box;
+			var btns;
+
+			var onChangeBoxColor = function(el, idx) {
+
+				var onHandleClass = function() {
+					var color = this.dataset.color;
+
+					if (oldColor) {
+						box.classList.remove(oldColor);
+					}
+
+					box.classList.add(color);
+
+					oldColor = color;
+				};
+
+				el.addEventListener('click', onHandleClass, false);
+			};
+
+			var init = function() {
+				box = el('.box');
+				btns = els('[type="button"]');
+
+				btns.forEach(onChangeBoxColor);
+			};
+
+			init();
+
+		}());
+
+		// ui
+
+
+
+	</script>
+</body>
+</html>
