@@ -28,12 +28,28 @@
     <script>
         var title = el('.toggle-title');
 
-        title.addEventListener('mouseover', function() {
+        // Ver.1
+
+/*        title.addEventListener('mouseover', function() {
             title.classList.add('hover');
         }, false);
         title.addEventListener('mouseout', function() {
             title.classList.remove('hover');
         }, false);
+*/
+        // Ver.2
+        var evtHandler = {
+            hover: function() {
+                title.classList.add('hover');
+            },
+            out: function() {
+                title.classList.remove('hover');
+            }
+        };
+
+        title.addEventListener('mouseover', evtHandler.hover, false);
+        title.addEventListener('mouseout', evtHandler.out, false);
+
     </script>
 </body>
 </html>
