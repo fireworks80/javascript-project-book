@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+	<meta charset="UTF-8">
+	<title>비교연산자</title>
+</head>
+<body>
+	<h1>연습문제 2.2.4</h1>
+	<p>Javascript 파일은 분리 하지 않음</p>
+
+	<h2>문제 1</h2>
+	<p>ㅁ에 알맞은 비교연산자를 추가하여 결과가 true가 나오도록</p>
+	<script>
+		document.write('100 < 122 = ' + (100 < 122));
+		document.write('<br>');
+
+		document.write('12 > 8 = ' + (12 > 8));
+		document.write('<br>');
+
+		document.write('8 * 2 === 16 = ' + ((8 * 2) === 16));
+	</script>
+
+	<h2>문제 2</h2>
+	<p> if (조건식) { 안녕중기} else { 너는 중기가 아냐 } 표시하기</p>
+	<script>
+
+		var name = '흥국';
+
+		if (name === '중기') {
+			document.write('안녕 중기!<br>');
+		} else {
+			document.write('너는 중기가 아냐 <br>');
+		}
+
+		document.write(name === '중기' ? '안녕 중기!' : '너는 중기가 아니야');
+	</script>
+</body>
+</html>
