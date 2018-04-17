@@ -14,9 +14,22 @@
     <h2>문제 1</h2>
     <p>첫번째와 마지막 목록의 내용이 교체되도록</p>
 
+    <ul id="list">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+
     <script src="../js/helper.js"></script>
     <script>
+        var list = el('#list');
+        var lis = els('li', list);
+        var firstTxt = lis[0].textContent;
+        var lastTxt = lis[lis.length - 1].textContent;
 
+        lis[0].textContent = lastTxt;
+        lis[lis.length - 1].textContent = firstTxt;
     </script>
 </body>
 </html>
