@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+  <meta charset="UTF-8">
+  <title>인디케이터 만들기</title>
+  <style>
+
+    html {
+      font-size: 10px;
+    }
+
+    body {
+      font-size: 1.6rem;
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    figure {
+      width: 400px;
+    }
+
+    figure img {
+      display: inline;
+      width: 10rem;
+      cursor: pointer;
+    }
+
+    .light-box {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 60vw;
+      height: 40vw;
+      background: orange;
+      text-align: center;
+    }
+
+    .light-box img {
+      width: 50%;
+    }
+
+    .light-box__close {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+
+    .dim {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, .6);
+    }
+
+  </style>
+</head>
+<body>
+  <h1>Light box</h1>
+  <figure class="list">
+    <img data-num="1" src="https://s3-ap-northeast-1.amazonaws.com/grm-contents-bucket/contents/scratch/%E1%84%89%E1%85%B5%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%92%E1%85%AA%E1%84%86%E1%85%A7%E1%86%AB.png" alt="">
+    <img data-num="2" src="http://file.gamedonga.co.kr/files/images/gamegru_news/newsimage2/granadoespada20040415_4.jpg" alt="">
+    <img data-num="3" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9OiAHZRJyY2x2vGBFdHuMN8sKD33b6eMOU2_Ntp2NslaTuowN" alt="">
+  </figure>
+
+  <div class="dim" hidden></div>
+
+  <div class="light-box" hidden>
+    <h2>GAME BACKGROUND IMAGE</h2>
+    <img src="https://s3-ap-northeast-1.amazonaws.com/grm-contents-bucket/contents/scratch/%E1%84%89%E1%85%B5%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%92%E1%85%AA%E1%84%86%E1%85%A7%E1%86%AB.png">
+    <div class="light-box__counter">
+      <button type="button">1</button>
+      <button type="button">2</button>
+      <button type="button">3</button>
+    </div>
+    <button class="light-box__close" type="button">닫기</button>
+  </div>
+
+  <script src="js/indicator.js"></script>
+</body>
+</html>
