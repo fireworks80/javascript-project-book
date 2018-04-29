@@ -18,3 +18,7 @@
 
 ## chpter7
 - [indicator](https://github.com/fireworks80/javascript-project-book/tree/master/ch7)
+
+## chpter8
+- [달력 위젯 소스코드](https://github.com/fireworks80/javascript-project-book/tree/master/ch8)
+- [달력 위젯 실행](https://htmlpreview.github.com/fireworks80/javascript-project-book/tree/master/ch8)
