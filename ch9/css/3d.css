@@ -1,0 +1,106 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+}
+
+h1,
+h2,
+body,
+ul {
+  margin: 0;
+}
+
+ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+body {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  perspective: 1000px;
+}
+
+header {
+  outline: 1px dashed red;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 10;
+  padding: 1rem 0;
+  background-color: #fff;
+  text-align: center;
+}
+
+main {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform-style: preserve-3d;
+  transition: all 1s;
+}
+
+section {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding-top: 7rem;
+  padding-left: 5rem;
+  font-size: 2rem;
+  background-repeat: no-repeat;
+  background-position: center 4.4rem;
+  background-size: cover;
+}
+
+section:nth-child(1) {
+  background-image: url(https://csslick.github.io/page3d/img01.jpg);
+}
+
+section:nth-child(2) {
+  background-image: url(https://csslick.github.io/page3d/img02.jpg);
+}
+
+section:nth-child(3) {
+  background-image: url(https://csslick.github.io/page3d/img03.jpg);
+}
+
+section:nth-child(4) {
+  background-image: url(https://csslick.github.io/page3d/img04.jpg);
+}
+
+.indicator {
+  position: absolute;
+  bottom: 3rem;
+  display: flex;
+}
+
+.indicator__link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 1rem;
+  width: 5rem;
+  height: 5rem;
+  font-size: 1.6rem;
+  color: #eee;
+  text-decoration: none;
+  border: 1px solid #eee;
+  border-radius: 100%;
+}
+
+.indicator__item:nth-child(1) .indicator__link {
+  margin-left: 0;
+}

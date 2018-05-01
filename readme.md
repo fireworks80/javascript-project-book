@@ -16,9 +16,13 @@
 - [5.1.3 연습문제](https://github.com/fireworks80/javascript-project-book/blob/master/5.1.3/index.html)
 - [5.2.5 연습문제](https://github.com/fireworks80/javascript-project-book/blob/master/5.2.5/index.html)
 
-## chpter7
+## chapter7
 - [indicator](https://github.com/fireworks80/javascript-project-book/tree/master/ch7)
 
-## chpter8
+## chapter8
 - [달력 위젯 소스코드](https://github.com/fireworks80/javascript-project-book/tree/master/ch8)
-- [실행파일](http://fireworks80.dothome.co.kr/javascript-prj-exm/)
+- [실행파일](http://fireworks80.dothome.co.kr/javascript-prj-exm/ch8)
+
+## chapter9
+- [소스코드](https://github.com/fireworks80/javascript-project-book/tree/master/ch9)
+- [실행파일](http://fireworks80.dothome.co.kr/javascript-prj-exm/ch9)
