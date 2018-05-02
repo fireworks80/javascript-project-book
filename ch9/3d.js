@@ -48,7 +48,7 @@
   };
 
   // event
-  indicator.addEventListener('click', function(e) {
+  var onIndicatorHandler = function(e) {
     e.preventDefault();
     var currentLi = e.target.parentNode;
     var liIdx = Array.prototype.indexOf.call(getEls('li', indicator), currentLi);
@@ -57,10 +57,11 @@
 
     activateIndicator(currentLi);
     rotatePage();
-  });
+  };
+
 
   init();
-
+  indicator.addEventListener('click', onIndicatorHandler);
   window.addEventListener('resize', init);
 }());
 
