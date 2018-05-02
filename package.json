@@ -6,7 +6,9 @@
   "author": "fireworks80 <fireworks80@naver.com>",
   "license": "MIT",
   "scripts": {
-  	"start": "yarn run live-server"
+  	"server": "yarn run live-server",
+    "scss": "node-sass --output-style expanded -rw ch9/scss -o ch9/css",
+    "start": "yarn server | yarn scss"
   },
   "devDependencies": {
     "live-server": "^1.2.0"

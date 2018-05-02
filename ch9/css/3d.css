@@ -104,3 +104,8 @@ section:nth-child(4) {
 .indicator__item:nth-child(1) .indicator__link {
   margin-left: 0;
 }
+
+.indicator__item.is-active .indicator__link {
+  background-color: #416275;
+  color: #E4EEF0;
+}
