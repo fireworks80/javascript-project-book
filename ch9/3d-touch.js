@@ -1,29 +1,34 @@
-var hammer = new Hammer(main);
+(function(obj) {
+	var hammer = new Hammer(obj.getMainEl());
 
-var onHammerHandler = function(idx) {
-	currentView = idx * sectionAngle * -1;
-	activateIndicator(idx);
-  rotatePage();
-};
+	var onHammerHandler = function(idx) {
 
-hammer.on('swipeleft', function() {
+		obj.setCurrentView(idx * obj.getSectionAng() * -1);
+		obj.activeIndicator(idx);
+	  obj.rotatePage();
+	};
 
-	if (liIdx < indicatorItems.length - 1) {
-		liIdx += 1;
-		onHammerHandler(liIdx);
-	} else {
-		alert('마지막 페이지 입니다');
-		return;
-	}
-});
+	hammer.on('swipeleft', function() {
+		idx = obj.getLiIdx();
+		if (idx < obj.getIndicatorItemLen() - 1) {
+			obj.setLiIdx(idx += 1);
+			onHammerHandler(idx);
+		} else {
+			alert('마지막 페이지 입니다');
+			return;
+		}
+	});
 
 
-hammer.on('swiperight', function() {
-	if (liIdx > 0) {
-		liIdx -= 1;
-		onHammerHandler(liIdx);
-	} else {
-		alert('첫번째 페이지 입니다');
-		return;
-	}
-});
+	hammer.on('swiperight', function() {
+		idx = obj.getLiIdx();
+		if (idx > 0) {
+			obj.setLiIdx(idx -= 1);
+			onHammerHandler(idx);
+		} else {
+			alert('첫번째 페이지 입니다');
+			return;
+		}
+	});
+}(effect3dPage));
+
