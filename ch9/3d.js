@@ -30,8 +30,7 @@ var rotateView = (function() {
   var currentIdx = 0;
 
   var rotatePage = function(idx) {
-
-    main.setAttribute('style', `transform: translateZ(-${viewWidth / 2}px) rotateY(${(angle * idx * -1)}deg)`);
+    main.setAttribute('style', `transform: translateZ(-${viewWidth / 2}px) rotateY(-${(angle * idx)}deg)`);
   };
 
   var init = function() {
@@ -45,6 +44,7 @@ var rotateView = (function() {
 
   return {
     init: init,
+    rotate: rotatePage,
     setCurrIdx: function(val) {
       currentIdx = val;
     },
@@ -56,8 +56,7 @@ var rotateView = (function() {
     },
     getTotalViewLen: function() {
       return sections.length;
-    },
-    rotate: rotatePage
+    }
   };
 }());
 
@@ -72,9 +71,9 @@ var indicator = (function(rotateView) {
   var activateIndicator = function(liIdx) {
 
     var resetHook = function(node, idx) {
-        if (node.nodeName === 'LI') {
-          node.classList.remove('is-active');
-        }
+      if (node.nodeName === 'LI') {
+        node.classList.remove('is-active');
+      }
     };
     // debugger;
     indicatorItems.forEach(resetHook);
@@ -94,7 +93,7 @@ var indicator = (function(rotateView) {
   };
 
   var init = function() {
-      indicator.addEventListener('click', onIndicatorHandler);
+    indicator.addEventListener('click', onIndicatorHandler);
   };
 
   return {
