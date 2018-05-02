@@ -70,19 +70,19 @@ section {
 }
 
 section:nth-child(1) {
-  background-image: url(https://csslick.github.io/page3d/img01.jpg);
+  background-image: url(../imgs/img01.jpg);
 }
 
 section:nth-child(2) {
-  background-image: url(https://csslick.github.io/page3d/img02.jpg);
+  background-image: url(../imgs/img02.jpg);
 }
 
 section:nth-child(3) {
-  background-image: url(https://csslick.github.io/page3d/img03.jpg);
+  background-image: url(../imgs/img03.jpg);
 }
 
 section:nth-child(4) {
-  background-image: url(https://csslick.github.io/page3d/img04.jpg);
+  background-image: url(../imgs/img04.jpg);
 }
 
 .indicator {
