@@ -39,66 +39,6 @@ body {
   top: -125px;
 }
 
-.banner img:nth-child(1) {
-  transition: all 2s infinite;
-  left: 13px;
-  transform: translateY(320px) rotate(299deg);
-}
-
-.banner img:nth-child(2) {
-  transition: all 1s infinite;
-  left: 49px;
-  transform: translateY(320px) rotate(82deg);
-}
-
-.banner img:nth-child(3) {
-  transition: all 3s infinite;
-  left: 2px;
-  transform: translateY(320px) rotate(203deg);
-}
-
-.banner img:nth-child(4) {
-  transition: all 2s infinite;
-  left: 302px;
-  transform: translateY(320px) rotate(303deg);
-}
-
-.banner img:nth-child(5) {
-  transition: all 3s infinite;
-  left: 17px;
-  transform: translateY(320px) rotate(90deg);
-}
-
-.banner img:nth-child(6) {
-  transition: all 1s infinite;
-  left: 271px;
-  transform: translateY(320px) rotate(244deg);
-}
-
-.banner img:nth-child(7) {
-  transition: all 4s infinite;
-  left: 120px;
-  transform: translateY(320px) rotate(110deg);
-}
-
-.banner img:nth-child(8) {
-  transition: all 3s infinite;
-  left: 33px;
-  transform: translateY(320px) rotate(248deg);
-}
-
-.banner img:nth-child(9) {
-  transition: all 2s infinite;
-  left: 99px;
-  transform: translateY(320px) rotate(19deg);
-}
-
-.banner img:nth-child(10) {
-  transition: all 1s infinite;
-  left: 200px;
-  transform: translateY(320px) rotate(345deg);
-}
-
 .btn {
   position: absolute;
   padding: 0;
