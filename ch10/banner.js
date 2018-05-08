@@ -26,11 +26,7 @@
 
 		var start = function(balloon, idx) {
 
-			if (balloon.y < 220) {
-				balloon.y += balloon.speed;
-			} else {
-				balloon.y = -120;
-			}
+			balloon.y = (balloon.y < 220) ? balloon.y += balloon.speed : -120;
 
 			balloon.rotate += 5;
 
