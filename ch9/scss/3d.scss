@@ -85,7 +85,7 @@ section {
 
 @for $i from 1 through 4 {
   section:nth-child(#{$i}) {
-    background-image: url(https://csslick.github.io/page3d/img0#{$i}.jpg);
+    background-image: url(../imgs/img0#{$i}.jpg);
   }
 }
 

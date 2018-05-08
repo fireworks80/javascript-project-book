@@ -1,3 +1,6 @@
+// ==========================================
+// helper
+// ==========================================
 (function(g) {
   var doc = document;
 
@@ -15,80 +18,87 @@
   };
 }(window));
 
-var effect3dPage = (function() {
+// ==========================================
+// rotateView
+// ==========================================
+var rotateView = (function() {
 
   var main = getEl('main');
   var sections = getEls('section');
-  var indicator = getEl('.indicator');
-  var indicatorItems = getEls('.indicator__item', indicator);
-  var sectionAngle = 90;
   var viewWidth = 0;
-  var currentView = 0;
-  var liIdx = 0;
+  var angle = 90;
+  var currentIdx = 0;
+
+  var rotatePage = function(idx) {
+    main.setAttribute('style', `transform: translateZ(-${viewWidth / 2}px) rotateY(-${(angle * idx)}deg)`);
+  };
 
   var init = function() {
     viewWidth = sections[0].offsetWidth;
     sections.forEach(function(section, idx) {
-      section.setAttribute('style','transform: rotateY('+ (idx * sectionAngle) +'deg) translateZ('+ (viewWidth / 2) +'px)');
+      section.setAttribute('style','transform: rotateY('+ (idx * angle) +'deg) translateZ('+ (viewWidth / 2) +'px)');
     });
-    rotatePage();
+    rotatePage(0);
+    window.addEventListener('resize', init);
   };
 
-  var rotatePage = function() {
-    main.setAttribute('style', `transform: translateZ(-${viewWidth / 2}px) rotateY(${currentView}deg)`);
+  return {
+    init: init,
+    rotate: rotatePage,
+    setCurrIdx: function(val) {
+      currentIdx = val;
+    },
+    getCurrIdx: function() {
+      return currentIdx;
+    },
+    getMainEl: function() {
+      return main;
+    },
+    getTotalViewLen: function() {
+      return sections.length;
+    }
   };
+}());
+
+
+// ==========================================
+// indicator
+// ==========================================
+var indicator = (function(rotateView) {
+  var indicator = getEl('.indicator');
+  var indicatorItems = getEls('.indicator__item', indicator);
 
   var activateIndicator = function(liIdx) {
 
     var resetHook = function(node, idx) {
-        if (node.nodeName === 'LI') {
-          node.classList.remove('is-active');
-        }
+      if (node.nodeName === 'LI') {
+        node.classList.remove('is-active');
+      }
     };
     // debugger;
     indicatorItems.forEach(resetHook);
     indicatorItems.item(liIdx).classList.add('is-active');
   };
 
-  // event
+  // event handler
   var onIndicatorHandler = function(e) {
     e.preventDefault();
-    var currentLi = e.target.parentNode;
-    liIdx = Array.prototype.indexOf.call(indicatorItems, currentLi);
-    console.log(liIdx);
-    currentView = liIdx * sectionAngle * -1;
 
+    var currentLi = e.target.parentNode;
+    var liIdx = Array.prototype.indexOf.call(indicatorItems, currentLi);
+
+    rotateView.rotate(liIdx);
+    rotateView.setCurrIdx(liIdx);
     activateIndicator(liIdx);
-    rotatePage();
   };
 
-
-  init();
-  indicator.addEventListener('click', onIndicatorHandler);
-  window.addEventListener('resize', init);
+  var init = function() {
+    indicator.addEventListener('click', onIndicatorHandler);
+  };
 
   return {
-    setCurrentView: function(num) {
-      currentView = num;
-    },
-    getMainEl: function() {
-      return main;
-    },
-    getIndicatorItemLen: function() {
-      return indicatorItems.length;
-    },
-    getLiIdx: function() {
-      return liIdx;
-    },
-    setLiIdx: function(val) {
-      liIdx = val;
-    },
-    getSectionAng: function() {
-      return sectionAngle;
-    },
-    activeIndicator: activateIndicator,
-    rotatePage: rotatePage
+    init: init,
+    active: activateIndicator
   };
-
-}());
+}(rotateView));
 

@@ -1,34 +1,40 @@
-(function(obj) {
-	var hammer = new Hammer(obj.getMainEl());
+// ==========================================
+// swipe
+// ==========================================
+var swipe = (function(rotateView, indicator) {
+  var hammer = new Hammer(rotateView.getMainEl());
 
-	var onHammerHandler = function(idx) {
+  var onHammerHandler = function(idx) {
+    rotateView.setCurrIdx(idx);
+    rotateView.rotate(idx);
+    indicator.active(idx);
+  };
 
-		obj.setCurrentView(idx * obj.getSectionAng() * -1);
-		obj.activeIndicator(idx);
-	  obj.rotatePage();
-	};
+  var init = function() {
+    hammer.on('swipeleft', function() {
+      var idx = rotateView.getCurrIdx();
+      if (idx < rotateView.getTotalViewLen() - 1) {
+        idx += 1;
+        onHammerHandler(idx);
+      } else {
+        alert('마지막 페이지 입니다');
+        return;
+      }
+    });
 
-	hammer.on('swipeleft', function() {
-		idx = obj.getLiIdx();
-		if (idx < obj.getIndicatorItemLen() - 1) {
-			obj.setLiIdx(idx += 1);
-			onHammerHandler(idx);
-		} else {
-			alert('마지막 페이지 입니다');
-			return;
-		}
-	});
+    hammer.on('swiperight', function() {
+      var idx = rotateView.getCurrIdx();
+      if (idx > 0) {
+        idx -= 1;
+        onHammerHandler(idx);
+      } else {
+        alert('첫번째 페이지 입니다');
+        return;
+      }
+    });
+  };
 
-
-	hammer.on('swiperight', function() {
-		idx = obj.getLiIdx();
-		if (idx > 0) {
-			obj.setLiIdx(idx -= 1);
-			onHammerHandler(idx);
-		} else {
-			alert('첫번째 페이지 입니다');
-			return;
-		}
-	});
-}(effect3dPage));
-
+  return {
+    init: init
+  };
+}(rotateView, indicator));
