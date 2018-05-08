@@ -1,0 +1,91 @@
+@charset 'utf-8';
+
+// variable
+// ====================================
+$loc-img: 'images/';
+$width: 600px;
+$height: 190px;
+
+// mixin
+// ====================================
+@mixin background-image($name, $repeat: no-repeat, $pos: center top, $color: null) {
+	background: $color url($name) $repeat $pos;
+}
+
+// reset
+// ====================================
+figure,
+body {
+	margin: 0;
+}
+
+* {
+	user-select: none;
+}
+
+// helper
+// ====================================
+.a11y-hidden {
+	position: absolute;
+	overflow: hidden;
+	margin: -1px;
+	width: 1px;
+	height: 1px;
+	clip: rect(0 0 0 0);
+}
+
+// wrap
+// ====================================
+.wrap {
+	outline: 1px dashed red;
+	position: relative;
+	width: 600px;
+}
+
+// banner
+// ====================================
+.banner {
+	@include background-image($loc-img + 'bg.png', $repeat: repeat);
+	overflow: hidden;
+	position: relative;
+	height: 0;
+	transition: all .6s;
+
+	&.is-active {
+		height: 190px;
+	}
+
+	img {
+		position: absolute;
+		top: -125px;
+	} // img
+}
+
+// btn-sound
+// ====================================
+
+.btn {
+	position: absolute;
+	padding: 0;
+	border: 0;
+	cursor: pointer;
+}
+
+.btn-sound {
+	@include background-image($loc-img + 'sound_off.png');
+	bottom: .5em;
+	left: .5em;
+	width: 32px;
+	height: 28px;
+
+	&.is-active {
+		background-image: url($loc-img + 'sound_on.png');
+	}
+}
+
+.btn-status {
+	right: 0;
+	padding: .5em;
+	background-color: #ddd;
+	color: #fff;
+}

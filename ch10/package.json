@@ -1,0 +1,14 @@
+{
+  "name": "ch10",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+  	"scss": "node-sass --watch --output-style expanded ./banner.scss ./banner.css",
+  	"server": "yarn run live-server",
+  	"start": "yarn scss | yarn server"
+  },
+  "dependencies": {
+    "live-server": "^1.2.0"
+  }
+}

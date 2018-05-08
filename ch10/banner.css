@@ -1,0 +1,126 @@
+figure,
+body {
+  margin: 0;
+}
+
+* {
+  user-select: none;
+}
+
+.a11y-hidden {
+  position: absolute;
+  overflow: hidden;
+  margin: -1px;
+  width: 1px;
+  height: 1px;
+  clip: rect(0 0 0 0);
+}
+
+.wrap {
+  outline: 1px dashed red;
+  position: relative;
+  width: 600px;
+}
+
+.banner {
+  background: url("images/bg.png") repeat center top;
+  overflow: hidden;
+  position: relative;
+  height: 0;
+  transition: all .6s;
+}
+
+.banner.is-active {
+  height: 190px;
+}
+
+.banner img {
+  position: absolute;
+  top: -125px;
+}
+
+.banner img:nth-child(1) {
+  transition: all 2s infinite;
+  left: 13px;
+  transform: translateY(320px) rotate(299deg);
+}
+
+.banner img:nth-child(2) {
+  transition: all 1s infinite;
+  left: 49px;
+  transform: translateY(320px) rotate(82deg);
+}
+
+.banner img:nth-child(3) {
+  transition: all 3s infinite;
+  left: 2px;
+  transform: translateY(320px) rotate(203deg);
+}
+
+.banner img:nth-child(4) {
+  transition: all 2s infinite;
+  left: 302px;
+  transform: translateY(320px) rotate(303deg);
+}
+
+.banner img:nth-child(5) {
+  transition: all 3s infinite;
+  left: 17px;
+  transform: translateY(320px) rotate(90deg);
+}
+
+.banner img:nth-child(6) {
+  transition: all 1s infinite;
+  left: 271px;
+  transform: translateY(320px) rotate(244deg);
+}
+
+.banner img:nth-child(7) {
+  transition: all 4s infinite;
+  left: 120px;
+  transform: translateY(320px) rotate(110deg);
+}
+
+.banner img:nth-child(8) {
+  transition: all 3s infinite;
+  left: 33px;
+  transform: translateY(320px) rotate(248deg);
+}
+
+.banner img:nth-child(9) {
+  transition: all 2s infinite;
+  left: 99px;
+  transform: translateY(320px) rotate(19deg);
+}
+
+.banner img:nth-child(10) {
+  transition: all 1s infinite;
+  left: 200px;
+  transform: translateY(320px) rotate(345deg);
+}
+
+.btn {
+  position: absolute;
+  padding: 0;
+  border: 0;
+  cursor: pointer;
+}
+
+.btn-sound {
+  background: url("images/sound_off.png") no-repeat center top;
+  bottom: .5em;
+  left: .5em;
+  width: 32px;
+  height: 28px;
+}
+
+.btn-sound.is-active {
+  background-image: url("images/sound_on.png");
+}
+
+.btn-status {
+  right: 0;
+  padding: .5em;
+  background-color: #ddd;
+  color: #fff;
+}
