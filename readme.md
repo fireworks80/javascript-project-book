@@ -32,5 +32,21 @@
 - [실행파일](http://fireworks80.dothome.co.kr/javascript-prj-exm/ch10)
 
 ## chapter11
+    **GOOGLE MAP**
 - [소스코드](https://github.com/fireworks80/javascript-project-book/tree/master/ch11)
 - [실행파일](http://fireworks80.dothome.co.kr/javascript-prj-exm/ch11)
+
+    **예제 2 기본**
+
+- [소스코드](https://github.com/fireworks80/javascript-project-book/tree/master/ch11/exam-basic)
+- [실행파일](http://fireworks80.dothome.co.kr/javascript-prj-exm/ch11/exam-basic/)
+
+    **예제 2 ajax javascript**
+
+- [소스코드](https://github.com/fireworks80/javascript-project-book/tree/master/ch11/exam-ajax-js)
+- [실행파일](http://fireworks80.dothome.co.kr/javascript-prj-exm/ch11/exam-ajax-js/)
+
+    **예제 2 ajax jquery**
+
+- [소스코드](https://github.com/fireworks80/javascript-project-book/tree/master/ch11/exam-ajax-jquery)
+- [실행파일](http://fireworks80.dothome.co.kr/javascript-prj-exm/ch11/exam-ajax-jquery/)
