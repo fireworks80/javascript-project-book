@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+	<meta charset="UTF-8">
+	<title>연습문제 2</title>
+	<link rel="stylesheet" href="../exam.css">
+</head>
+<body>
+	<figure class="book-table js-book-table">
+		<table>
+			<caption>{{title}}</caption>
+			<thead>
+				<tr>
+					<th scope="col">제목</th>
+					<th scope="col">지은이</th>
+					<th scope="col">가격</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr v-for="book in books">
+					<td>{{book.title}}</td>
+					<td>{{book.name}}</td>
+					<td>{{book.price}}</td>
+				</tr>
+			</tbody>
+		</table>
+	</figure>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+	<script src="../helper.js"></script>
+	<script src="vue.js"></script>
+</body>
+</html>

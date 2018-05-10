@@ -50,3 +50,8 @@
 
 - [소스코드](https://github.com/fireworks80/javascript-project-book/tree/master/ch11/exam-ajax-jquery)
 - [실행파일](http://fireworks80.dothome.co.kr/javascript-prj-exm/ch11/exam-ajax-jquery/)
+
+    **예제 2 vue**
+
+- [소스코드](https://github.com/fireworks80/javascript-project-book/tree/master/ch11/vue)
+- [실행파일](http://fireworks80.dothome.co.kr/javascript-prj-exm/ch11/vue/)
