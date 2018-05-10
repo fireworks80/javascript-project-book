@@ -1,0 +1,16 @@
+.book-table {
+  width: 500px;
+  border: 1px solid #ddd;
+}
+
+table {
+  width: 100%;
+  table-layout: fixed;
+  text-align: center;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: solid #ddd;
+  border-width: 1px 1px 0;
+}
