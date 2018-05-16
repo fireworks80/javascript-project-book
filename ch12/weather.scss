@@ -1,0 +1,140 @@
+@charset 'UTF-8';
+
+// helper
+// =====================================
+.a11y-hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	clip: rect(0 0 0 0);
+}
+
+// mixin
+// =====================================
+@mixin debug($color: red) {
+	outline: 1px dashed $color;
+}
+
+@mixin gradient45deg($from, $to) {
+	background: $from;
+	background: -moz-linear-gradient(45deg, $from 0%, $to 100%);
+	background: -webkit-linear-gradient(45deg, $from 0%,$to 100%);
+	background: linear-gradient(45deg, $from 0%,$to 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{$from}', endColorstr='#{$to}',GradientType=1 );
+}
+
+// reset
+// =====================================
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+body,
+h1,
+figure,
+ul {
+	margin: 0;
+}
+
+ul {
+	padding: 0;
+	list-style: none;
+}
+
+
+html {
+	font-size: 10px;
+}
+
+// page
+// =====================================
+
+body {
+	@include gradient45deg(#5e7ab8, #41b8c6);
+	max-width: 760px;
+	margin-left: auto;
+	margin-right: auto;
+	height: 100vh;
+	padding: 2rem;
+	font-family: 'Lato', sans-serif;
+	line-height: 1;
+}
+
+.search {
+	// @include debug;
+
+	position: relative;
+	margin-bottom: 2rem;
+
+	&__field {
+		width: 100%;
+		padding: 2rem 7rem 2rem 2rem;
+		border: 0;
+		background-color: rgba(255, 255, 255, .5);
+		font-size: 2rem;
+		font-family: 'Lato', sans-serif;
+	}
+
+	&__btn {
+		position: absolute;
+		top: 50%;
+		right: 1rem;
+		transform: translateY(-50%);
+		width: 3rem;
+		height: 3rem;
+		background: url('search.svg') no-repeat;
+		border: 0;
+		font-size: 1.2rem;
+		color: #2d2d2d;
+		cursor: pointer;
+	}
+}
+
+.widget {
+	// @include debug;
+	display: flex;
+	flex-direction: row;
+	box-shadow: 0 0 0 1px #ddd;
+	color: #fff;
+
+	&__img {
+		display: flex;
+		flex-grow: 1;
+		align-items: center;
+
+		img {
+			width: 100%;
+			max-width: 148px;
+		}
+	}
+
+	figcaption {
+		display: flex;
+		flex-direction: column;
+		flex-grow: 2;
+		padding: 2rem 0;
+		text-align: center;
+	}
+
+	&__city {
+		margin-bottom: 2rem;
+		font-size: 3rem;
+		text-transform: uppercase;
+	}
+
+	&__celsius {
+		margin-bottom: 1.5rem;
+		font-size: 2.3rem;
+	}
+
+	&__temp-range {
+		display: flex;
+		justify-content: space-around;
+		font-size: 2rem;
+		text-transform: uppercase;
+	}
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <link rel="stylesheet" href="weather.css">
+</head>
+
+<body>
+  <h1 class="a11y-hidden">오늘의 날씨</h1>
+  <div class="search">
+    <input class="search__field" type="text" name="">
+    <button class="search__btn" type="button">
+    	<span class="a11y-hidden">지역 날씨 검색</span>
+    </button>
+  </div>
+  <section>
+  	<h2 class="a11y-hidden">날씨 컨텐츠</h2>
+
+    <figure class="widget">
+    	<div class="widget__img">
+    		<img src="" alt="">
+    	</div>
+      <figcaption>
+        <strong class="widget__city">seoul</strong>
+        <strong class="widget__celsius">1℃</strong>
+        <ul class="widget__temp-range">
+          <li>max 4℃</li>
+          <li>min -1℃</li>
+        </ul>
+      </figcaption>
+    </figure>
+  </section>
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+  <script src="weather.js"></script>
+</body>
+
+</html>
